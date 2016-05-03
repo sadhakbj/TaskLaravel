@@ -1,0 +1,37 @@
+.article_title {
+    font-size: 24px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.form_delete {
+    display: inline-block;
+}
+
+.navbar-inverse {
+    background: #0F1329;
+    font-size: 15px;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+    background: #0F1329;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #A7B735;
+    border-right: 1px solid #A7B735;
+    font-size: 24px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #A7B735;
+}
+
+.comment-contents {
+    min-height: 40px;
+}
+
+br + br + br + br {
+    display: none;
+}
