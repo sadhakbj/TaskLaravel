@@ -19,16 +19,15 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, etc.
      *
-     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function boot(Router $router)
+    public function boot()
     {
         //
 
         $this->pattern('id' , '[0-9]+');
 
-        parent::boot($router);
+        parent::boot();
     }
 
     /**

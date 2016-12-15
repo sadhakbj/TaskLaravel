@@ -7,11 +7,26 @@ use App\Services\ArticleService;
 use Illuminate\Http\Request;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Class ArticlesController
+ * @package App\Http\Controllers
+ */
 class ArticlesController extends Controller
 {
+    /**
+     * @var ArticleService
+     */
     public $article;
+    /**
+     * @var LoggerInterface
+     */
     public $logger;
 
+    /**
+     * ArticlesController constructor.
+     * @param ArticleService  $article
+     * @param LoggerInterface $logger
+     */
     public function __construct(ArticleService $article, LoggerInterface $logger)
     {
         $this->middleware('auth');
@@ -121,23 +136,5 @@ class ArticlesController extends Controller
         $this->logger->info('Article deleted', ['by' => auth()->user()->name, 'article_id' => $id]);
 
         return redirect()->route('articles.index')->with('message', 'Article has been successfully deleted.');
-    }
-
-    /**
-     * Learn Collection o
-     */
-    public function collect()
-    {
-        $collection = collect(
-            [
-                ['account_id' => 'account-x10', 'product' => 'Chair'],
-                ['account_id' => 'account-x10', 'product' => 'Bookcase'],
-                ['account_id' => 'account-x11', 'product' => 'Desk'],
-            ]
-        );
-
-        $grouped = $collection->groupBy('account_id');
-
-        dump($grouped->toArray());
     }
 }
