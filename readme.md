@@ -1,4 +1,6 @@
 # TaskLaravel
+[![Build Status](https://travis-ci.org/sadhakbj/TaskLaravel.svg?branch=master)](https://travis-ci.org/sadhakbj/TaskLaravel)
+
 Simple blog application using Laravel 5.2 following Repository design pattern. 
 This application implements the major concetps of Laravel framework like:
  * Routing
@@ -32,6 +34,10 @@ The app can be run with the command below:
 The application is written in PHP based on the [Laravel](http://laravel.com) framework, current version of Laravel 
 used for this project is 5.2.
  
+## Running Tests
+
+Tests can be run through command `./vendor/bin/phpunit`
+
 ## Check code quality
 
 We follow [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) for 
@@ -43,6 +49,5 @@ We have followed PSR-2 coding convention.
 
 
 ## Tools Used:
-
 * Bootstrap 
 * Jquery
