@@ -59,7 +59,6 @@ class CommentsController extends Controller
         );
 
         $users = $this->article->getUsersToNotify($articleId);
-
         event(new UserCommentedOnPost($users));
 
         return redirect()->back()->with('message', 'Comment has been successfully posted.');

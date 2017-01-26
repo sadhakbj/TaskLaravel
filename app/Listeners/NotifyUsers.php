@@ -30,23 +30,14 @@ class NotifyUsers
     {
         $articleId = $event->information['article_id'];
         $users     = $event->information['users'];
-        $link      = route('articles.show', $articleId);
         $emails    = array_column($users, 'email');
 
-        $content = sprintf(
-            "There is new comment on the article you follow. Please check it here. <a href='%s'. Regards Task Laravel Team",
-            $link
-        );
+        Mail::send('emails.postComment', ['articleId' => $articleId], function ($m) use ($emails) {
+            $m->from('hello@taskLaravel.com', 'Task Laravel');
 
+            $m->to($emails)->subject('New comment on a article you are following.!');
+        });
 
-        Mail::raw(
-            $content,
-            function ($m) use ($emails) {
-                $m->from('admin@app.com', 'Task Laravel');
-
-                $m->to($emails)->subject('New Comment.');
-            }
-        );
 
     }
 }
